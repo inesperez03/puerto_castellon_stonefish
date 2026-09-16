@@ -115,29 +115,6 @@
 			</internal_part> 
 		</base_link>
 
-		<actuator name="Thruster_R" type="thruster">
-            <specs max_setpoint="387.4" normalized_setpoint="true" inverted_setpoint="true"/>
-
-            <propeller diameter="0.076" right="false">
-                <mesh filename="opti_blueboat/propeller2.obj" scale="1"/>
-                <material name="Neutral"/>
-                <look name="yellow"/>
-            </propeller>
-
-            <rotor_dynamics type="first_order">
-                <time_constant value="0.2"/> 
-            </rotor_dynamics>
-
-            <thrust_model type="linear_interpolation">
-                <input value="-362.824 -299.99 -224.116 -130.495 -33.21 0 32.28 129.546 222.92 302.43 370.021"/>
-                
-                <output value="-39.92 -26.58 -14.12 -4.70 -0.39 0 0.39 5.88 17.85 33.55 51.50"/>
-            </thrust_model>
-
-            <origin rpy="1.57 0.0 0.0" xyz="-0.472 0.26 0.0245"/>
-            <link name="blueboat/base_link"/> 
-        </actuator>
-
         <actuator name="Thruster_L" type="thruster">
             <specs max_setpoint="387.4" normalized_setpoint="true" inverted_setpoint="false"/>
 
@@ -159,6 +136,29 @@
 
             <origin rpy="1.57 0.0 0.0" xyz="-0.472 -0.3 0.0245"/>
             <link name="blueboat/base_link"/>
+        </actuator>
+
+		<actuator name="Thruster_R" type="thruster">
+            <specs max_setpoint="387.4" normalized_setpoint="true" inverted_setpoint="true"/>
+
+            <propeller diameter="0.076" right="false">
+                <mesh filename="opti_blueboat/propeller2.obj" scale="1"/>
+                <material name="Neutral"/>
+                <look name="yellow"/>
+            </propeller>
+
+            <rotor_dynamics type="first_order">
+                <time_constant value="0.2"/> 
+            </rotor_dynamics>
+
+            <thrust_model type="linear_interpolation">
+                <input value="-362.824 -299.99 -224.116 -130.495 -33.21 0 32.28 129.546 222.92 302.43 370.021"/>
+                
+                <output value="-39.92 -26.58 -14.12 -4.70 -0.39 0 0.39 5.88 17.85 33.55 51.50"/>
+            </thrust_model>
+
+            <origin rpy="1.57 0.0 0.0" xyz="-0.472 0.26 0.0245"/>
+            <link name="blueboat/base_link"/> 
         </actuator>
 		
 
@@ -204,11 +204,9 @@
 		<sensor name="odom_gt" type="odometry" rate="30.0">
 		<link name="blueboat/base_link"/>
 		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-
 		<!-- opcional: añade ruido si quieres -->
 		<noise position="0.0" velocity="0.0" angle="0.0" angular_velocity="0.0"/>
-
-		<ros_publisher topic="/blueboat/navigator/odometry"/>
+		<ros_publisher topic="/blueboat/stonefish/odometry"/>
 		</sensor>
 		
 		<world_transform rpy="0.0 0.0 0.0" xyz="0.0 -3.0 0.1"/>
