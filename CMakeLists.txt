@@ -28,6 +28,7 @@ install(
     scripts/odom2tf.py
     scripts/bluerov2_logitechF310teleop.py
     scripts/ardusim_patch.py
+    scripts/world_ned_gps_publisher.py
     DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -48,4 +49,3 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
-

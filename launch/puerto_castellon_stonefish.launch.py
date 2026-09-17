@@ -45,8 +45,16 @@ def generate_launch_description():
         }.items()
     )
 
+    world_ned_gps_publisher = Node(
+        package="puerto_castellon_stonefish",
+        executable="world_ned_gps_publisher.py",
+        name="world_ned_gps_publisher",
+        parameters=[{"use_sim_time": False}],
+    )
+
     return LaunchDescription([
         robot_name_arg,
         robot_state_publisher_node,
         stonefish_simulator,
+        world_ned_gps_publisher,
     ])

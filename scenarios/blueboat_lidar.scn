@@ -179,7 +179,7 @@
 			<ros_publisher topic="/blueboat/navigator/imu"/>
 		</sensor>
 
-		<sensor name="gps" type="gps" rate="1.0">
+		<sensor name="gps_frame" type="gps" rate="1.0">
 			<link name="blueboat/base_link"/>
 			<origin rpy="0.0 0.0 0.0" xyz="-0.35 0.15 -0.35"/>
 			<noise ned_position="0.5"/>
@@ -209,7 +209,7 @@
 		<ros_publisher topic="/blueboat/stonefish/odometry"/>
 		</sensor>
 		
-		<world_transform rpy="0.0 0.0 0.0" xyz="0.0 -3.0 0.1"/>
+		<world_transform rpy="0.0 0.0 0.0" xyz="3.0 0.0  0.1"/>
 		
 
 	       <ros_subscriber thrusters="/blueboat/controller/thruster_setpoints_sim"/>

@@ -48,7 +48,7 @@
         </visual>
         <material name="Rock" />
         <look name="marron" />
-        <world_transform rpy="3.14 0.0 0.0" xyz="0.0 0.0 0.0" />
+        <world_transform rpy="3.14 0.0 1.57" xyz="0.0 0.0 0.0" />
     </static>
 
     <include file="$(find puerto_castellon_stonefish)/scenarios/blueboat_lidar.scn" />
